@@ -154,7 +154,7 @@ app.get('/', (req, res) => {
   res.send('Hey this is my API running..');
 });
 app.get('/api/penerimaan', (req, res) => {
-  res.json(penerimaan);
+  res.json(rekap_penerimaan);
 });
 app.get('/api/penerimaan/:id', (req, res) => {
   const { id } = req.params;
