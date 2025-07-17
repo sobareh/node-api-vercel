@@ -159,9 +159,9 @@ app.get('/api/penerimaan', (req, res) => {
 app.get('/api/penerimaan/:id', (req, res) => {
   const { id } = req.params;
   const detail = penerimaan.filter((p) => p.id == id);
-  if (detail) {
+  if (detail.length > 1) {
     res.json(detail);
-  } else {
+  } else if (detail.length < 1) {
     res.status(404).send('data tidak ditemukan');
   }
 });
