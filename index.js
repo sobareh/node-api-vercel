@@ -1,9 +1,6 @@
 const express = require('express');
 const app = express();
 const PORT = 4000;
-app.listen(PORT, () => {
-  console.log(`API listening on PORT ${PORT} `);
-});
 
 let penerimaan = [
   {
@@ -51,11 +48,15 @@ let penerimaan = [
 app.get('/', (req, res) => {
   res.send('Hey this is my API running..');
 });
-app.get('/penerimaan', (req, res) => {
+app.get('/api/penerimaan', (req, res) => {
   res.json(penerimaan);
 });
-app.get('/penerimaan_detail', (req, res) => {
+app.get('/api/penerimaan_detail', (req, res) => {
   res.send('This is my about route..... ');
+});
+
+app.listen(PORT, () => {
+  console.log(`API listening on PORT ${PORT} `);
 });
 
 // Export the Express API
