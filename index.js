@@ -162,7 +162,7 @@ app.get('/api/penerimaan/:id', (req, res) => {
   if (detail) {
     res.json(detail);
   } else {
-    res.status(404).json('data tidak ditemukan');
+    res.status(404).send('data tidak ditemukan');
   }
 });
 
